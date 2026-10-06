@@ -9,9 +9,17 @@ import { ShoppingList } from './components/shopping-list/shopping-list';
   templateUrl: './app.html',
 })
 export class App {
-  protected readonly items: string[] = [];
+  items: string[] = [];
 
-  protected addItem(_item: string): void {}
+  addItem(item: string): void {
+    this.items = [...this.items, item];
+  }
 
-  protected deleteItem(_index: number): void {}
+  deleteItem(index: number): void {
+    if (index < 0 || index >= this.items.length) {
+      return;
+    }
+
+    this.items = this.items.filter((_, itemIndex) => itemIndex !== index);
+  }
 }
