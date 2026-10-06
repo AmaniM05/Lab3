@@ -1,0 +1,27 @@
+.add-item {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  border: 1px solid #4a7ab8;
+  padding: 16px;
+  margin-bottom: 16px;
+}
+
+.add-item input {
+  flex: 1;
+  padding: 10px;
+  font-size: 18px;
+  text-align: center;
+  border: 1px solid #4a7ab8;
+  border-radius: 12px;
+}
+
+.add-item button {
+  padding: 10px 20px;
+  font-size: 18px;
+  font-weight: bold;
+  background: #d0d0d0;
+  border: 1px solid #4a7ab8;
+  border-radius: 12px;
+  cursor: pointer;
+}

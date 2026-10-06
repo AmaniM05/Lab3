@@ -1,6 +1,8 @@
-<main>
-  <h1>Shopping List</h1>
-
-  <app-add-item (itemAdded)="addItem($event)" />
-  <app-shopping-list [items]="items" (itemDeleted)="deleteItem($event)" />
+<main class="container">
+  <h1>Liste de courses</h1>
+  <app-add-item (itemAdded)="addItem($event)"></app-add-item>
+  <app-shopping-list
+    [items]="items()"
+    (itemDeleted)="deleteItem($event)"
+  ></app-shopping-list>
 </main>

@@ -1,0 +1,33 @@
+.shopping-list {
+  border: 1px solid #4a7ab8;
+  padding: 16px;
+}
+
+.row-item {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.item {
+  flex: 1;
+  background: #729fcf;
+  padding: 6px 12px;
+  font-size: 18px;
+}
+
+.row-item button {
+  padding: 8px 14px;
+  font-weight: bold;
+  background: #d0d0d0;
+  border: 1px solid #4a7ab8;
+  border-radius: 12px;
+  cursor: pointer;
+}
+
+.empty {
+  margin: 0;
+  text-align: center;
+  color: #666;
+}

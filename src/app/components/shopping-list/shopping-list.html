@@ -1,0 +1,10 @@
+<div class="shopping-list">
+  @for (item of items; track $index) {
+    <div class="row-item">
+      <span class="item">{{ item }}</span>
+      <button type="button" (click)="itemDeleted.emit($index)">Supprimer</button>
+    </div>
+  } @empty {
+    <p class="empty">Votre liste est vide.</p>
+  }
+</div>

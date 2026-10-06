@@ -1,0 +1,10 @@
+<div class="add-item">
+  <input
+    type="text"
+    name="newItem"
+    placeholder="Ajouter un item..."
+    [(ngModel)]="newItem"
+    (keyup.enter)="add()"
+  />
+  <button type="button" (click)="add()">Ajouter</button>
+</div>

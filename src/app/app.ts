@@ -1,17 +1,21 @@
-import { Component } from '@angular/core';
+import { Component, signal } from '@angular/core';
 import { AddItem } from './components/add-item/add-item';
 import { ShoppingList } from './components/shopping-list/shopping-list';
 
 @Component({
-  imports: [AddItem, ShoppingList],
   selector: 'app-root',
-  styleUrl: './app.css',
+  imports: [AddItem, ShoppingList],
   templateUrl: './app.html',
+  styleUrl: './app.css',
 })
 export class App {
-  protected readonly items: string[] = [];
+  items = signal<string[]>([]);
 
-  protected addItem(_item: string): void {}
+  addItem(item: string): void {
+    this.items.update((list) => [...list, item]);
+  }
 
-  protected deleteItem(_index: number): void {}
+  deleteItem(index: number): void {
+    this.items.update((list) => list.filter((_, i) => i !== index));
+  }
 }
