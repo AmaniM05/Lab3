@@ -1,0 +1,12 @@
+<form (ngSubmit)="addItem()">
+  <label for="item-name">Item</label>
+  <input
+    id="item-name"
+    name="itemName"
+    type="text"
+    [(ngModel)]="itemName"
+    placeholder="Enter an item"
+    autocomplete="off"
+  />
+  <button type="submit">Add</button>
+</form>
