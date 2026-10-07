@@ -1,4 +1,4 @@
-import { Component, signal } from '@angular/core';
+import { Component } from '@angular/core';
 import { AddItem } from './components/add-item/add-item';
 import { ShoppingList } from './components/shopping-list/shopping-list';
 
@@ -9,13 +9,17 @@ import { ShoppingList } from './components/shopping-list/shopping-list';
   styleUrl: './app.css',
 })
 export class App {
-  items = signal<string[]>([]);
+  items: string[] = [];
 
   addItem(item: string): void {
-    this.items.update((list) => [...list, item]);
+    this.items = [...this.items, item];
   }
 
   deleteItem(index: number): void {
-    this.items.update((list) => list.filter((_, i) => i !== index));
+    if (index < 0 || index >= this.items.length) {
+      return;
+    }
+
+    this.items = this.items.filter((_, itemIndex) => itemIndex !== index);
   }
 }

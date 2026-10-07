@@ -2,9 +2,9 @@
   @for (item of items; track $index) {
     <div class="row-item">
       <span class="item">{{ item }}</span>
-      <button type="button" (click)="itemDeleted.emit($index)">Supprimer</button>
+      <button type="button" (click)="itemDeleted.emit($index)">Delete</button>
     </div>
   } @empty {
-    <p class="empty">Votre liste est vide.</p>
+    <p class="empty">Your shopping list is empty.</p>
   }
 </div>

@@ -9,13 +9,17 @@ import { FormsModule } from '@angular/forms';
 })
 export class AddItem {
   @Output() itemAdded = new EventEmitter<string>();
-  newItem = '';
 
-  add(): void {
-    const item = this.newItem.trim();
-    if (item) {
-      this.itemAdded.emit(item);
-      this.newItem = '';
+  itemName = '';
+
+  addItem(): void {
+    const item = this.itemName.trim();
+
+    if (!item) {
+      return;
     }
+
+    this.itemAdded.emit(item);
+    this.itemName = '';
   }
 }

@@ -3,12 +3,18 @@
   gap: 16px;
   align-items: center;
   border: 1px solid #4a7ab8;
+  border-radius: 12px;
   padding: 16px;
   margin-bottom: 16px;
 }
 
+.add-item label {
+  font-weight: 600;
+}
+
 .add-item input {
   flex: 1;
+  min-width: 0;
   padding: 10px;
   font-size: 18px;
   text-align: center;
@@ -20,8 +26,26 @@
   padding: 10px 20px;
   font-size: 18px;
   font-weight: bold;
-  background: #d0d0d0;
+  color: #fff;
+  background: #315f97;
   border: 1px solid #4a7ab8;
   border-radius: 12px;
   cursor: pointer;
+}
+
+.add-item button:hover {
+  background: #244d7e;
+}
+
+.add-item input:focus-visible,
+.add-item button:focus-visible {
+  outline: 3px solid #a8c7eb;
+  outline-offset: 2px;
+}
+
+@media (max-width: 520px) {
+  .add-item {
+    align-items: stretch;
+    flex-direction: column;
+  }
 }
